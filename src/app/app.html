@@ -6,7 +6,7 @@
 
     <main>
         <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <li *ngFor="let blog of blogs()" class="card bg-base-100 shadow-xl">
+        <li *ngFor="let blog of blogService.getBlogs()" class="card bg-base-100 shadow-xl">
             <div class="card-body">
                 <h2 class="card-title">{{ blog.name }}</h2>
                 <a href="{{ blog.url }}" target="_blank" class="link link-primary">Visit Blog</a>
