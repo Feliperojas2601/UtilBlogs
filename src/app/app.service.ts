@@ -44,7 +44,107 @@ export class BlogService {
         { name: 'Zoom', url: 'https://medium.com/zoom-developer-blog' },
     ]);
 
+    private realWorldSystemsSignal: Signal<{ company: string; resources: { title: string; url: string }[] }[]> = signal([
+        {
+            company: 'Facebook',
+            resources: [
+                { title: 'Facebook Timeline: Brought To You By The Power Of Denormalization', url: 'https://goo.gl/FCNrbm' },
+                { title: 'Scale at Facebook', url: 'https://goo.gl/NGTdCs' },
+                { title: 'Building Timeline: Scaling up to hold your life story', url: 'https://goo.gl/8p5wDV' },
+                { title: 'Erlang at Facebook (Facebook chat)', url: 'https://goo.gl/zSLHrj' },
+                { title: 'Facebook Chat', url: 'https://goo.gl/qzSiWC' },
+                { title: 'Finding a needle in Haystack: Facebook\'s photo storage', url: 'https://goo.gl/edj4FL' },
+                { title: 'Serving Facebook Multifeed: Efficiency, performance gains through redesign', url: 'https://goo.gl/adFVMQ' },
+                { title: 'Scaling Memcache at Facebook', url: 'https://goo.gl/rZiAhX' },
+                { title: 'TAO: Facebook\'s Distributed Data Store for the Social Graph', url: 'https://goo.gl/Tk1DyH' }
+            ]
+        },
+        {
+            company: 'Amazon',
+            resources: [
+                { title: 'Amazon Architecture', url: 'https://goo.gl/k4feoW' },
+                { title: 'Dynamo: Amazon\'s Highly Available Key-value Store', url: 'https://goo.gl/C7zxDL' }
+            ]
+        },
+        {
+            company: 'Netflix',
+            resources: [
+                { title: 'A 360 Degree View Of The Entire Netflix Stack', url: 'https://goo.gl/rYSDTz' },
+                { title: 'It\'s All A/Bout Testing: The Netflix Experimentation Platform', url: 'https://goo.gl/agbA4K' },
+                { title: 'Netflix Recommendations: Beyond the 5 stars (Part 1)', url: 'https://goo.gl/A4FkYi' },
+                { title: 'Netflix Recommendations: Beyond the 5 stars (Part 2)', url: 'https://goo.gl/XNPMXm' }
+            ]
+        },
+        {
+            company: 'Google',
+            resources: [
+                { title: 'Google Architecture', url: 'https://goo.gl/dvkDiY' },
+                { title: 'The Google File System (Google Docs)', url: 'https://goo.gl/xj5n9R' },
+                { title: 'Differential Synchronization (Google Docs)', url: 'https://goo.gl/9zqG7x' },
+                { title: 'YouTube Architecture', url: 'https://goo.gl/mCPRUF' },
+                { title: 'Seattle Conference on Scalability: YouTube Scalability', url: 'https://goo.gl/dH3zYq' },
+                { title: 'Bigtable: A Distributed Storage System for Structured Data', url: 'https://goo.gl/6NaZca' }
+            ]
+        },
+        {
+            company: 'Instagram',
+            resources: [
+                { title: 'Instagram Architecture: 14 Million Users, Terabytes Of Photos, 100s Of Instances, Dozens Of Technologies', url: 'https://goo.gl/s1VcW5' }
+            ]
+        },
+        {
+            company: 'Twitter',
+            resources: [
+                { title: 'The Architecture Twitter Uses To Deal With 150M Active Users', url: 'https://goo.gl/EwvfRd' },
+                { title: 'Scaling Twitter: Making Twitter 10000 Percent Faster', url: 'https://goo.gl/nYGC1k' },
+                { title: 'Announcing Snowflake (Snowflake is a network service for generating unique ID numbers at high scale with some simple guarantees)', url: 'https://goo.gl/GzVWYm' },
+                { title: 'Timelines at Scale', url: 'https://goo.gl/8KbqTy' }
+            ]
+        },
+        {
+            company: 'Uber',
+            resources: [
+                { title: 'How Uber Scales Their Real-Time Market Platform', url: 'https://goo.gl/kGZuVy' }
+            ]
+        },
+        {
+            company: 'Pinterest',
+            resources: [
+                { title: 'Scaling Pinterest', url: 'https://goo.gl/KtmjW3' },
+                { title: 'Pinterest Architecture Update', url: 'https://goo.gl/w6rRsf' }
+            ]
+        },
+        {
+            company: 'LinkedIn',
+            resources: [
+                { title: 'A Brief History of Scaling LinkedIn', url: 'https://goo.gl/8A1Pi8' }
+            ]
+        },
+        {
+            company: 'Flickr',
+            resources: [
+                { title: 'Flickr Architecture', url: 'https://goo.gl/dWtgYa' }
+            ]
+        },
+        {
+            company: 'Dropbox',
+            resources: [
+                { title: 'How We\'ve Scaled Dropbox', url: 'https://goo.gl/NjBDtC' }
+            ]
+        },
+        {
+            company: 'WhatsApp',
+            resources: [
+                { title: 'The WhatsApp Architecture Facebook Bought For $19 Billion', url: 'https://bit.ly/2AHJnFn' }
+            ]
+        }
+    ]);
+
     getBlogs() {
         return this.blogsSignal();
+    }
+
+    getRealWorldSystems() {
+        return this.realWorldSystemsSignal();
     }
 }
