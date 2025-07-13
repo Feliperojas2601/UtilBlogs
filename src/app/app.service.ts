@@ -45,6 +45,6 @@ export class BlogService {
     ]);
 
     getBlogs() {
-        return this.blogsSignal;
+        return this.blogsSignal();
     }
 }
